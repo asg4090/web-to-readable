@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "web-to-readable",
+  "version": "2.0.0",
+  "description": "web_to_readable：一次调用直接返回完整 Markdown 正文，自动保存 JSON、HTML 和本地图片，按需导出 PDF。",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "web_to_readable",
+        "shortDescription": "给网址，一次调用直接返回可读正文和图片",
+        "defaultPrompt": ["读取这个网址并直接返回可读正文。", "读取这个网址，同时导出 PDF。"]
+      }
+    }
+  }
+}

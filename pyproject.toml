@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web-to-readable"
+version = "2.0.0"
+description = "One MCP call to read public webpages and WeChat articles as Markdown, with local images and optional PDF."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "web_to_readable contributors"}]
+keywords = ["mcp", "wechat", "markdown", "agents", "web-extraction", "pdf"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+    "mcp>=1.27.2,<2",
+    "playwright>=1.58,<2",
+    "pypdf>=6.4,<7",
+    "httpx>=0.28,<0.29",
+    "beautifulsoup4>=4.12,<5",
+    "markdownify==1.2.0",
+    "Pillow>=10,<13",
+    "pydantic>=2.11,<3",
+    "tzdata>=2024.1; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+dev = ["build>=1.2,<2", "twine>=6,<7"]
+
+[project.urls]
+Repository = "https://github.com/asg4090/web-to-readable"
+Issues = "https://github.com/asg4090/web-to-readable/issues"
+Documentation = "https://github.com/asg4090/web-to-readable#readme"
+
+[project.scripts]
+web-to-readable = "web_to_readable.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+web_to_readable = ["extract_article.js"]

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "web_to_readable": {
+      "command": "web-to-readable",
+      "args": []
+    }
+  }
+}
